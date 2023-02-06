@@ -1,0 +1,32 @@
+<form method='post' action='/count'>
+    <table width="80%" border="5" align="center" bgcolor="white">
+        <tbody>
+            <tr>
+                <th colspan="4">
+                    type words:
+                    {% if previous_form %}
+                        <input type="text" id="text" name="text" value={{ previous_form.text }} />
+
+                    {% else %}
+                        <input type="text" id="text" name="text" value="" />
+                    
+                    {% endif %}
+                    
+                    {% if error %}
+                        <p style="color:red;">{{ error.message }}</p>
+                    {% endif %}
+                </th>
+            </tr>
+            <th colspan="4"><button type="submit">Submit</button></th>
+            <tr>
+                <th colspan="4">
+                    {% if not word_count %}
+                        <p>type some words!</p>
+                        {% else  %}
+                        <p>You typed {{ word_count }} words!</p>    
+                    {% endif %}
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</form>
