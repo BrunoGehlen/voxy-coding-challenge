@@ -4,14 +4,7 @@
             <tr>
                 <th colspan="4">
                     type words:
-                    {% if previous_form %}
-                        <input type="text" id="text" name="text" value={{ previous_form.text }} />
-
-                    {% else %}
-                        <input type="text" id="text" name="text" value="" />
-                    
-                    {% endif %}
-                    
+                    <input type="text" id="text" name="text" value="" />
                     {% if error %}
                         <p style="color:red;">{{ error.message }}</p>
                     {% endif %}
